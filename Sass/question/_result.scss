@@ -1,0 +1,43 @@
+.result {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($black, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.1s ease-in-out;
+
+  &__text {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    background-color: $primary-color;
+    color: #fff;
+    font-size: 3rem;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba($black, 0.7);
+    transition: all 2s ease-in-out 1s;
+  }
+
+  &--show {
+    opacity: 1;
+    visibility: visible;
+
+    .result__text {
+      animation: show-result 1.4s ease-in-out 0.4s both;
+    }
+  }
+}
+
+@keyframes show-result {
+  from {
+    transform: translateX(140%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

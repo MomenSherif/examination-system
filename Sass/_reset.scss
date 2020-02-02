@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $primary-font;
+  font-size: 1.6rem;
+  background-color: $bg-color;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+}
+
+.container {
+  flex: 1;
+  max-width: 600px;
+  margin: auto;
+  padding: 0 15px;
+}

@@ -1,0 +1,40 @@
+.skipped-questions {
+  position: fixed;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  min-height: 300px;
+  padding: 15px 20px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 4px 5px rgba($black, 0.3);
+
+  &__heading {
+    font-weight: normal;
+    border-bottom: 1px solid $light-gray;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+
+  &__index {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    background-color: $primary-color;
+    opacity: 0.7;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+.question {
+  position: relative;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__number {
+    font-weight: normal;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      left: -29px;
+      top: -19px;
+      background-color: $primary-color;
+      box-shadow: 20px 19px 0 -4px $primary-color;
+      opacity: 0.3;
+    }
+  }
+
+  &__archieve {
+    color: $primary-color;
+    font-size: 2.6rem;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    &:active {
+      transform: translateY(5px);
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__text {
+    color: $dark-gray;
+    margin-bottom: 20px;
+  }
+
+  &__answer {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__indicators {
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: 4rem;
+    color: $black;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transform-origin: left;
+      width: 40px;
+      height: 40px;
+      background-color: $primary-color;
+      opacity: 0.7;
+      border-radius: 50%;
+      transition: all 0.4s ease-in-out;
+    }
+
+    &:hover {
+      &::before {
+        border-radius: 100px;
+        width: 100%;
+        opacity: 1;
+        transition-delay: 0.2s;
+      }
+
+      .question__btn-text {
+        transform: translateX(0);
+      }
+    }
+
+    &:focus {
+      outline: none;
+      @extend .question__btn:hover;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    &-text {
+      display: block;
+      transform: translateX(15px);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &--prev {
+      float: left;
+    }
+
+    &--next {
+      float: right;
+    }
+
+    &--submit {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+    }
+  }
+
+  &__index {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+  }
+}
